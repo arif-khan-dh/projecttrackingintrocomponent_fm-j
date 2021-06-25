@@ -1,0 +1,29 @@
+@use './1-abstract/functions' as fu;
+
+@import url(https://fonts.googleapis.com/css2?family=Barlow&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap);
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+
+}
+
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // min-height: 100vh;
+    
+    // debug
+    border: 1px solid black;
+}

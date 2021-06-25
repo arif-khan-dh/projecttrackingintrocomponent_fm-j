@@ -1,0 +1,72 @@
+@use './functions' as fu;
+@use './colors' as c;
+
+// Width of vertical scrollbar is 17px
+$breakpoint-up: (
+    "xxxlarge": fu.toRem(0px),
+    "xxlarge": fu.toRem(0px),
+    "x1large": fu.toRem(0px),
+    "xlarge": fu.toRem(0px),
+    "large": fu.toRem(0px),
+    "xmedium": fu.toRem(0px),
+    "medium": fu.toRem(0px),
+    "xmedium-small": fu.toRem(0px),
+    "medium-small": fu.toRem(0px),
+    "medium-xsmall": fu.toRem(0px),
+    "small": fu.toRem(0px),
+    "xsmall": fu.toRem(0px),
+    
+);
+
+@mixin breakpoint-down ($size) {
+    // @media (max-width: map-get($breakpoint-down, $size)){
+    //     @content;
+    // }
+
+    @media (max-width: map-get($breakpoint-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoint-up, $size )){
+        @content;
+    }
+}
+
+@mixin gap-below-illustration() {
+    margin-top: fu.toRem(46px);
+
+    @include breakpoint-up(small) {
+        margin-top: 10vmin;    
+    }
+
+    @include breakpoint-up(large) {
+        margin-top: 0;    
+    }
+}
+
+@mixin dynamic-width($size) {
+    $width: map-get($map: $breakpoint-up, $key: $size);
+
+    .email{
+        width: 63%;
+    }
+
+    .btn {
+        width: 35%;
+        margin-top: 0;
+        margin-left: fu.toRem(10px);
+    }
+}
+
+@mixin  widen {
+    margin-left: calc(calc(50vw - 50%) * -1);
+    padding-left: calc(50vw - 50%);
+    width: calc(100vw - 8px);
+    padding-right: calc(50vw - 50%);
+}
+
+@mixin box-shadow() {
+    box-shadow: 0 fu.toRem(5px) fu.toRem(5px) rgba($color: colors.$light-gray, $alpha: 0.7);
+}

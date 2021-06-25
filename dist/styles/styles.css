@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css2?family=Barlow&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap);
+body {
+  font-family: "Barlow";
+}
+
+nav, .cta {
+  font-family: "Barlow Condensed";
+}
+
+a {
+  color: #242942;
+  text-decoration: none;
+}
+
+.container {
+  font-size: 1.125rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body, h1, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=styles.css.map */

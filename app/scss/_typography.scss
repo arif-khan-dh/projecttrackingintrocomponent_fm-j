@@ -1,0 +1,19 @@
+@use './1-abstract/fonts' as fo;
+@use './1-abstract/colors' as c;
+
+body {
+    font-family: fo.$font-barlow;
+}
+
+nav, .cta {
+    font-family: fo.$font-barlowcondensed;
+}
+
+a {
+    color: c.$verDarkBlue;
+    text-decoration: none;
+}
+
+.container {
+    font-size: fo.$size-sm;
+}

@@ -1,7 +1,8 @@
-@use './1-abstract/fonts';
-@use './1-abstract/colors';
-@use './1-abstract/functions';
-@use './1-abstract/mixins';
+@use './2-components/logo';
+@use './2-components/nav';
 
 @use './typography';
 @use './home';
+@use './3-layouts/header';
+@use './3-layouts/illustration';
+@use './3-layouts/content';

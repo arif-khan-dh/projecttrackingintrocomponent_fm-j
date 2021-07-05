@@ -13,7 +13,7 @@ $breakpoint-up: (
     "xmedium-small": fu.toRem(0px),
     "medium-small": fu.toRem(0px),
     "medium-xsmall": fu.toRem(0px),
-    "small": fu.toRem(0px),
+    "small": fu.toRem(375px),
     "xsmall": fu.toRem(0px),
     
 );
@@ -31,6 +31,16 @@ $breakpoint-up: (
 @mixin breakpoint-up ($size) {
     @media (min-width: map-get($breakpoint-up, $size )){
         @content;
+    }
+}
+
+@mixin margin-fallback($margin) {
+    @if $margin > 0 {
+        margin-left: 0;
+        margin-right: 0;
+    } @else {
+        margin-left: $margin;
+        margin-right: $margin;
     }
 }
 

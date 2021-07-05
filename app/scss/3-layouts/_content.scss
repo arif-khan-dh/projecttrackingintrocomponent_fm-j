@@ -1,0 +1,43 @@
+@use '../1-abstract/functions' as fu;
+@use '../1-abstract/mixins' as m;
+@use '../1-abstract/colors' as c;
+
+.content {
+    padding-top: fu.toRem(82px);
+
+    .text {
+
+        .feature {
+
+            .highlight {
+                background-color: c.$veryDarkBlue;
+                padding: fu.toRem(5px) fu.toRem(10px);
+                border-radius: fu.toRem(18px);
+            }
+        }
+
+        h1 {
+            padding-top: fu.toRem(18px);
+        }
+
+        h6 {
+            padding-top: fu.toRem(18px);
+        }
+    }
+
+    .cta {
+        padding-top: fu.toRem(26px);
+
+        button {
+            width: 50%;
+            background-color: c.$red;
+            border: none;
+            border-radius: fu.toRem(6px);
+            height: fu.toRem(36px);
+        }
+
+        span {
+            padding-left: fu.toRem(18px);
+        }
+    }
+}

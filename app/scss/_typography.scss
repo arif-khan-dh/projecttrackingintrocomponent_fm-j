@@ -1,19 +1,96 @@
+@use  './1-abstract/functions' as fu;
 @use './1-abstract/fonts' as fo;
 @use './1-abstract/colors' as c;
+
+:root {
+}
 
 body {
     font-family: fo.$font-barlow;
 }
 
-nav, .cta {
+nav, button, .text, .cta {
     font-family: fo.$font-barlowcondensed;
 }
 
 a {
-    color: c.$verDarkBlue;
+    color: c.$veryDarkBlue;
     text-decoration: none;
+    letter-spacing: 0.1em;
 }
 
 .container {
-    font-size: fo.$size-sm;
+    font-size: fo.$size-xsm;
+    text-transform: uppercase;
+}
+
+nav {
+    font-weight: 700;
+
+    li {
+        color: blue;
+    }
+
+    .login {
+        a {
+            color: c.$darkGrayishBlue;
+        }        
+    }
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: fo.$size-xsm;
+    letter-spacing: .06em;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: fo.$size-xxxlg;
+    color: c.$veryDarkBlue;
+    text-shadow: 0 0 fu.toRem(1px) currentColor;
+}
+
+h6 {
+    font-size: fo.$size-sm; 
+    text-transform: none;
+    font-weight: normal;
+    color: c.$darkGrayishBlue;
+}
+
+span {
+    color: c.$grayishBlue;
+}
+
+button, .highlight {
+    color: c.$lightGrayishBlue;
+}
+
+.show {
+    li {
+        text-align: center;
+    }
+}
+
+.text {
+
+    .highlight {        
+        font-weight: 700;
+    }
+
+    span:not(.highlight) {
+        padding-left: fu.toRem(10px);     
+        letter-spacing: .22em;
+        word-spacing: 0.15em;
+        font-size: fo.$size-xsm;
+    }
+}
+
+.cta {
+
+    span {
+        letter-spacing: .1em;
+        word-spacing: 0.12em;
+    }
 }

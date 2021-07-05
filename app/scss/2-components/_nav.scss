@@ -1,0 +1,58 @@
+@use '../1-abstract/functions' as fu;
+@use '../1-abstract/colors' as c;
+
+nav {
+    // display: flex;
+    display: none;
+
+    ul {
+        list-style-type: none;
+        padding-right: fu.toRem(10px);
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    &.show {
+        --paddint-top: #{fu.toRem(20px)};
+        position: absolute;
+        width: 100%;
+        top: 150%;
+        left: 0;    
+        background-color: white;
+        box-shadow: 0 0 fu.toRem(16px) rgba($color: c.$veryDarkBlue, $alpha: 0.6);
+        border-radius: fu.toRem(3px);
+        padding: fu.toRem(30px);
+        
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        ul {
+            padding: 0;
+            width: 100%;
+
+            li {
+                display: list-item;
+
+                &:not(:first-of-type) {
+                    padding-top: var(--paddint-top);
+                }
+            }
+
+            &::after {
+                content: "";
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid c.$lightGrayishBlue;
+                padding-top: calc(var(--paddint-top) + #{fu.toRem(5px)});
+            }
+        }
+
+        span {
+            padding-top: var(--paddint-top);
+        }
+
+    }
+}

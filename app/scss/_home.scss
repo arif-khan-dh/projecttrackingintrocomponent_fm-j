@@ -1,4 +1,5 @@
 @use './1-abstract/functions' as fu;
+@use './1-abstract/colors' as c;
 
 @import url(https://fonts.googleapis.com/css2?family=Barlow&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap);
@@ -13,17 +14,40 @@ html {
 }
 
 :root {
-
+    --mb-container-width: 84%;
 }
 
-body, h1, p, ul {
+body, h1, h6, p, ul {
     margin: 0;
     padding: 0;
 }
 
 body {
-    // min-height: 100vh;
-    
-    // debug
-    border: 1px solid black;
+    // display: flex;
+    // justify-content: center;
+    min-height: calc(100vh - 17px);
+    background-image: url(../../images/bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left 50vw bottom 46vh;    
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    width: var(--mb-container-width);
+    min-width: fu.toRem(324px);
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+button, li, .logo, .login, .hamburger {    
+    cursor: pointer;
 }
